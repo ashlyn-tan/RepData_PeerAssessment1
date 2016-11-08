@@ -42,7 +42,7 @@ x$date=as.Date(x$date, format="%Y-%m-%d")
 
 ##Analysis : Part 1 
 
-The first part of the analysis is conducted by ignored the missing values in the data
+The first part of the analysis is conducted by ignoring the missing values in the data
 
 
 ```r
@@ -71,7 +71,7 @@ rmedian=median(totalsteps$steps)
 The mean number of total steps taken per day is found to be 1.0766189 &times; 10<sup>4</sup>.
 The median of the total number of steps taken per day is 10765.
 
-##Finding average daily activity pattern  
+- Finding average daily activity pattern  
 
 The mean number of steps are averaged according to the interval and used to plot a time seris graph showing the average daily activity pattern.  
 

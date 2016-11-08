@@ -40,7 +40,7 @@ x$date=as.Date(x$date, format="%Y-%m-%d")
 
 ##Analysis : Part 1 
 
-The first part of the analysis is conducted by ignored the missing values in the data
+The first part of the analysis is conducted by ignoring the missing values in the data
 
 ````{r}
 x.na=x[!is.na(x),]
@@ -64,7 +64,7 @@ rmedian=median(totalsteps$steps)
 The mean number of total steps taken per day is found to be `r rmean`.
 The median of the total number of steps taken per day is `r rmedian`.
 
-##Finding average daily activity pattern  
+- Finding average daily activity pattern  
 
 The mean number of steps are averaged according to the interval and used to plot a time seris graph showing the average daily activity pattern.  
 ````{r}
