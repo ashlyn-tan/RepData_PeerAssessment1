@@ -152,7 +152,8 @@ yaveragesteps=aggregate(steps~interval + day, data =y, mean)
 
 library('lattice')
 xyplot(yaveragesteps$steps ~ yaveragesteps$interval | yaveragesteps$day,type='l',
-       main='Average number of steps taken by interval', ylab='Number of steps taken', xlab='Interval', col='blue', layout=c(1,2))
+       main='Average number of steps taken by interval', xlab='Interval',
+       ylab='Number of steps taken', col='blue', layout=c(1,2))
 ```
 
 ![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png)
