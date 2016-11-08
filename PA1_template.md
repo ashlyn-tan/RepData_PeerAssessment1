@@ -140,7 +140,7 @@ The mean and median total number of steps taken per day are 0 and 0 respectively
 - Activity patterns between weekdays and weekends  
 
 A new factor variable is created with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend.  
-A panel plot containing the time seris plot constructed for weekdays and weekend is plotted. From the panel plot, it can be infered that the participant is more active during weekend with more higher activity levels occuring throughout.  
+A panel plot containing the time seris plot constructed for weekdays and weekend is plotted. From the panel plot, it can be inferred that the participant is more active during weekend with more higher activity levels occuring throughout.  
 
 
 ```r
@@ -151,7 +151,7 @@ y$day=as.factor(ifelse(is.element(weekdays(as.Date(y$date)),weekdays), "Weekday"
 yaveragesteps=aggregate(steps~interval + day, data =y, mean)
 
 library('lattice')
-xyplot(yaveragesteps$steps ~ yaveragesteps$interval | yaveragesteps$day,type='l',main='Average number of steps taken by interval', ylab='Number of steps taken',xlab='Interval',col='blue',layout=c(1,2))
+xyplot(yaveragesteps$steps ~ yaveragesteps$interval | yaveragesteps$day,type='l', main='Average number of steps taken by interval', ylab='Number of steps taken', xlab='Interval', col='blue', layout=c(1,2))
 ```
 
 ![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png)
