@@ -34,6 +34,7 @@ if(!file.exists("getdata-projectfiles-UCI HAR Dataset.zip")) {
 }
 ```
 
+
 - Reading of the data file and formatting
 
 ```r
@@ -63,7 +64,6 @@ hist(totalsteps$steps,main='Histogram of total number of steps each day',
 
 ![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
 
-
 ```r
 rmean=mean(totalsteps$steps)
 rmedian=median(totalsteps$steps)
@@ -78,8 +78,9 @@ The mean number of steps are averaged according to the interval and used to plot
 
 ```r
 averagesteps=aggregate(steps~interval, data =x.na, mean)
-plot(averagesteps$interval,averagesteps$steps,type='l',main='Average number of steps taken by interval',
-     ylab='Number of steps taken',xlab='Interval',col='red')
+plot(averagesteps$interval,averagesteps$steps,type='l', xlab='Interval',
+     main='Average number of steps taken by interval', col='red', 
+     ylab='Number of steps taken')
 ```
 
 ![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png)
@@ -125,7 +126,6 @@ hist(ytotalsteps$steps,main='Histogram of total number of steps each day',
 ```
 
 ![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png)
-
 
 ```r
 rymean=mean(ytotalsteps$steps)

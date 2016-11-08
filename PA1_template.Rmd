@@ -33,6 +33,7 @@ if(!file.exists("getdata-projectfiles-UCI HAR Dataset.zip")) {
 }
 ````
 
+
 - Reading of the data file and formatting
 ````{r}
 x=read.csv('activity.csv',stringsAsFactors = FALSE, header=TRUE)
@@ -56,7 +57,6 @@ totalsteps=aggregate(steps~date, data = x.na, sum)
 hist(totalsteps$steps,main='Histogram of total number of steps each day',
      xlab='Number of steps',col='red')
 ````
-
 ````{r, include=TRUE}
 rmean=mean(totalsteps$steps)
 rmedian=median(totalsteps$steps)
@@ -70,8 +70,9 @@ The median of the total number of steps taken per day is `r rmedian`.
 The mean number of steps are averaged according to the interval and used to plot a time seris graph showing the average daily activity pattern.  
 ````{r}
 averagesteps=aggregate(steps~interval, data =x.na, mean)
-plot(averagesteps$interval,averagesteps$steps,type='l',main='Average number of steps taken by interval',
-     ylab='Number of steps taken',xlab='Interval',col='red')
+plot(averagesteps$interval,averagesteps$steps,type='l', xlab='Interval',
+     main='Average number of steps taken by interval', col='red', 
+     ylab='Number of steps taken')
 rinterval=averagesteps[which.max(averagesteps$steps),'interval']
 ````  
 The interval with the highest number of average steps is `r rinterval`.  
@@ -94,7 +95,7 @@ for (i in 1:nrow(y)){
         y[i,'steps']=averagesteps[y[i,'interval']==averagesteps$interval,'steps']
     }
 }
-````  
+````
 
 The missing values are imputed using the average number of steps of the corresponding interval found in the first part of the analysis.
 
@@ -106,15 +107,14 @@ The number of steps is summed up according to the respective day to get the tota
 ytotalsteps=aggregate(steps~date, data = y, sum)
 hist(ytotalsteps$steps,main='Histogram of total number of steps each day',
      xlab='Number of steps',col='blue')
-````  
-
+````
 ````{R}
 rymean=mean(ytotalsteps$steps)
 rymedian=median(ytotalsteps$steps)
 
 dmean=rymean-rmean
 dmedian=rymedian-rymedian
-````  
+````
 
 The mean and median total number of steps taken per day are `r dmean` and `r dmedian` respectively. The differences between the estimates from the first part of the assignment and the estimates from the second part of data are `r dmean` and `r dmedian` respectively.  
 
@@ -134,4 +134,4 @@ library('lattice')
 xyplot(yaveragesteps$steps ~ yaveragesteps$interval | yaveragesteps$day,type='l',
        main='Average number of steps taken by interval', xlab='Interval',
        ylab='Number of steps taken', col='blue', layout=c(1,2))
-```  
+```
