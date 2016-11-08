@@ -1,5 +1,6 @@
 #Project 1 Report
-###Creator: Ashlyn Tan
+###Author: Ashlyn Tan  
+###Date: 2016-11-08
 
 ##Introduction
 
@@ -154,6 +155,3 @@ xyplot(yaveragesteps$steps ~ yaveragesteps$interval | yaveragesteps$day,type='l'
 ```
 
 ![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png)
-
-author: Ashlyn Tan  
-date: 2016-11-08
