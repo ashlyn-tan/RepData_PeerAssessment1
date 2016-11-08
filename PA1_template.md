@@ -1,6 +1,6 @@
 #Project 1 Report
-###Author: Ashlyn Tan  
-###Date: 2016-11-08
+Author: Ashlyn Tan  
+Date: 2016-11-08
 
 ##Introduction
 
